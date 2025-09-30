@@ -4,20 +4,23 @@ import viteLogo from '/vite.svg'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import VideogamesList from '../components/VideogamesList'
 import VideogamesDetails from '../components/VideogamesDetails'
+import { FetchProvider } from '../context/GlobalContext'
 
 
 function App() {
 
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route>
-            <Route path='/' element={<VideogamesList />} ></Route>
-            <Route path='/details/:Id' element={<VideogamesDetails />} ></Route>
-          </Route>
-        </Routes>
-      </BrowserRouter>
+      <FetchProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route>
+              <Route path='/' element={<VideogamesList />} ></Route>
+              <Route path='/details/:Id' element={<VideogamesDetails />} ></Route>
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </FetchProvider>
     </>
   )
 }
