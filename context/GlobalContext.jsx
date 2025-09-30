@@ -1,21 +1,11 @@
 import { createContext, useContext, useEffect, useState } from 'react'
+import useVideogames from '../customHook/useVideogames'
 
 const FetchContext = createContext()
 
 const FetchProvider = ({ children }) => {
 
-    const [videogames, setVideogames] = useState([])
-
-    useEffect(() => {
-        const apiUrl = import.meta.env.VITE_API_URL
-        fetch(`${apiUrl}/videogames`)
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                setVideogames(data)
-            })
-            .catch(error => console.error(error))
-    }, [])
+    const { videogames, setVideogames } = useVideogames()
 
     return (
         <FetchContext.Provider value={{ videogames, setVideogames }} >
