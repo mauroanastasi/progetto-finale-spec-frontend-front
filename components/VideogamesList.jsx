@@ -49,11 +49,23 @@ const VideogamesList = () => {
 
             <ul>
 
-                {filteredArray.map((game) => (
-                    <li key={game.id}>
-                        <VideogamesItem id={game.id} title={game.title} category={game.category} />
-                    </li>
-                ))}
+                <>
+
+                    <table className='videoGamesTable'>
+                        <thead>
+                            <tr>
+                                <th>Titolo</th>
+                                <th>Categoria</th>
+                                <th>Dettagli</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {filteredArray.map((game) => (
+                                <VideogamesItem id={game.id} title={game.title} category={game.category} />
+                            ))}
+                        </tbody>
+                    </table>
+                </>
 
             </ul>
         </div >

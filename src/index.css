@@ -1,0 +1,16 @@
+.videoGamesTable {
+    width: 700px;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background-color: white;
+    table-layout: auto;
+}
+
+.videoGamesTable th,
+.videoGamesTable td {
+    border: 1px solid #565656;
+    padding: 0.5rem 1rem;
+    text-align: left;
+    white-space: nowrap;
+
+}

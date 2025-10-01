@@ -4,14 +4,15 @@ import { Link } from 'react-router-dom'
 const VideogamesItem = ({ title, category, id }) => {
 
     return (
-
-        <div>
-            <h2>{title}</h2>
-            <h2>{category}</h2>
-            <button>
-                <Link to={`/details/${id}`}>{title}</Link>
-            </button>
-        </div>
+        <tr>
+            <td>{title}</td>
+            <td>{category}</td>
+            <td>
+                <button>
+                    <Link to={`/details/${id}`}>Scopri di più</Link>
+                </button>
+            </td>
+        </tr>
     )
 }
 
