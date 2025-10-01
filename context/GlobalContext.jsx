@@ -5,10 +5,10 @@ const FetchContext = createContext()
 
 const FetchProvider = ({ children }) => {
 
-    const { videogames, setVideogames } = useVideogames()
+    const { videogames, setVideogames, fullVideogames } = useVideogames()
 
     return (
-        <FetchContext.Provider value={{ videogames, setVideogames }} >
+        <FetchContext.Provider value={{ videogames, setVideogames, fullVideogames }} >
             {children}
         </FetchContext.Provider>
     )

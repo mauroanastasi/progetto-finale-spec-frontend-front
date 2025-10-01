@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 const useVideogames = () => {
 
@@ -16,7 +17,22 @@ const useVideogames = () => {
             .catch(error => console.error(error))
     }, [])
 
-    return { videogames }
+    const fullVideogames = async (id) => {
+        try {
+            const response = await fetch(`${apiUrl}/videogames/${id}`);
+            if (!response.ok) {
+                throw new Error(`Errore ${response.status}`);
+            }
+            const data = await response.json();
+            console.log(data)
+            return data;
+        } catch (err) {
+            console.error("Errore fetch dettagli:", err);
+            throw err;
+        }
+    };
+
+    return { videogames, fullVideogames }
 
 }
 
