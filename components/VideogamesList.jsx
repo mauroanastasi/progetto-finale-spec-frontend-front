@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 import { useFetchContext } from '../context/GlobalContext'
 import VideogamesItem from './VideogamesItem';
 
@@ -28,6 +28,30 @@ const VideogamesList = () => {
 
     const oneCategories = [...new Set(allCategories)];
 
+    const [sortBy, setSortBy] = useState(`title`)
+    const [sortOrder, setSortOrder] = useState(1)
+
+    const handleSort = (field) => {
+        if (sortBy === field) {
+            setSortOrder(prev => prev * -1);
+        } else {
+            setSortBy(field)
+            setSortOrder(1)
+        }
+    }
+
+    const visualSort = sortOrder === 1 ? "A-Z" : "Z-A";
+
+    const sortedVideogames = useMemo(() => {
+        return [...filteredArray].sort((a, b) => {
+            let comp;
+            if (sortBy === "title") {
+                comp = a.title.localeCompare(b.title)
+            }
+            return comp * sortOrder;
+        })
+    }, [filteredArray, sortBy, sortOrder])
+
     return (
         <div>
             <h1>Videogames</h1>
@@ -46,30 +70,27 @@ const VideogamesList = () => {
                     </option>
                 ))}
             </select>
+            <>
+                <table className='videoGamesTable'>
+                    <thead>
+                        <tr>
+                            <th onClick={() => handleSort(`title`)} >Titolo {sortBy === "title" && visualSort}</th>
+                            <th>Categoria </th>
+                            <th>Dettagli</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {sortedVideogames.map((game) => (
+                            <VideogamesItem id={game.id} title={game.title} category={game.category} />
+                        ))}
+                    </tbody>
+                </table>
+            </>
 
-            <ul>
 
-                <>
-
-                    <table className='videoGamesTable'>
-                        <thead>
-                            <tr>
-                                <th>Titolo</th>
-                                <th>Categoria</th>
-                                <th>Dettagli</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {filteredArray.map((game) => (
-                                <VideogamesItem id={game.id} title={game.title} category={game.category} />
-                            ))}
-                        </tbody>
-                    </table>
-                </>
-
-            </ul>
         </div >
     )
 }
+
 
 export default VideogamesList
