@@ -1,13 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { useFetchContext } from '../context/GlobalContext';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+import CompareVideogamesModal from './CompareVideogamesModal';
 
 const VideogamesDetails = () => {
-    const { fullVideogames } = useFetchContext();
+
+    const navigate = useNavigate()
+
+    const { fullVideogames, compareVideogames, compare } = useFetchContext();
+
+    // uso metodo per id specifico 
 
     const { id } = useParams();
 
-    const [videogame, setVideogame] = useState(null);
+    const [videogame, setVideogame] = useState([]);
 
     useEffect(() => {
 
@@ -24,6 +30,16 @@ const VideogamesDetails = () => {
         })()
 
     }, [id, fullVideogames]);
+
+
+
+    const handleCompare = (games) => {
+        compareVideogames(games)
+        if (compare.length === 0) {
+            alert("Primo videogioco selezionato per la comparazione")
+            navigate("/")
+        }
+    }
 
     return (
         <div>
@@ -42,8 +58,10 @@ const VideogamesDetails = () => {
                     <p>{videogame.maxPlayer}</p>
                     <p>{videogame.price}</p>
                     <p>{videogame.rating}</p>
+                    <button onClick={() => handleCompare(videogame)}>Compara</button>
                 </>
             )}
+            {compare.length === 2 && <CompareVideogamesModal />}
         </div>
     );
 };

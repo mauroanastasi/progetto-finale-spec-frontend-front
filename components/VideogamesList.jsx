@@ -1,8 +1,11 @@
 import React, { useState, useEffect, useMemo } from 'react'
 import { useFetchContext } from '../context/GlobalContext'
 import VideogamesItem from './VideogamesItem';
+import CompareVideogamesModal from './CompareVideogamesModal';
 
 const VideogamesList = () => {
+
+    // per la ricerca di titolo e categoria
 
     const { videogames } = useFetchContext();
 
@@ -18,17 +21,21 @@ const VideogamesList = () => {
         setSearchCategory(e.target.value)
     }
 
-
     const filteredArray = videogames.filter(v =>
         v.title.toLowerCase().includes(search.toLowerCase()) &&
         (searchCategory === "" || v.category === searchCategory)
     );
 
+    // per inserire le categorie di videogiochi
+
     const allCategories = videogames.map(game => game.category);
 
     const oneCategories = [...new Set(allCategories)];
 
+    // per l'ordinamento alfabetico
+
     const [sortBy, setSortBy] = useState(`title`)
+
     const [sortOrder, setSortOrder] = useState(1)
 
     const handleSort = (field) => {
@@ -44,7 +51,7 @@ const VideogamesList = () => {
 
     const sortedVideogames = useMemo(() => {
         return [...filteredArray].sort((a, b) => {
-            let comp;
+            let comp
             if (sortBy === "title") {
                 comp = a.title.localeCompare(b.title)
             }
@@ -57,7 +64,7 @@ const VideogamesList = () => {
             <h1>Videogames</h1>
             <input type="text" value={search} onChange={handleChange} />
 
-            <label for="caategorie">Scegli una categoria:</label>
+            <label htmlFor="caategorie">Scegli una categoria:</label>
             <select name="categorie" id="categorie"
                 type="text"
                 value={searchCategory}
@@ -81,7 +88,7 @@ const VideogamesList = () => {
                     </thead>
                     <tbody>
                         {sortedVideogames.map((game) => (
-                            <VideogamesItem id={game.id} title={game.title} category={game.category} />
+                            <VideogamesItem key={game.id} id={game.id} title={game.title} category={game.category} />
                         ))}
                     </tbody>
                 </table>

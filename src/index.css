@@ -8,9 +8,54 @@
 
 .videoGamesTable th,
 .videoGamesTable td {
-    border: 1px solid #565656;
+    border: 1px solid #444444;
     padding: 0.5rem 1rem;
     text-align: left;
-    white-space: nowrap;
+}
 
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    background: rgb(255, 255, 255);
+    max-width: 800px;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.modal h2 {
+    text-align: center;
+}
+
+.modal table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.modal td,
+.modal th {
+    border: 1px solid #727272;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.modal button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #222;
+    color: white;
+    border: none;
+    border-radius: 5px;
 }

@@ -3,6 +3,10 @@ import { useParams } from "react-router-dom";
 
 const useVideogames = () => {
 
+    const [compare, setCompare] = useState([])
+
+    // chiamata globale list solo proprietà id, createdAt, updatedAt, title, category
+
     const [videogames, setVideogames] = useState([])
 
     const apiUrl = import.meta.env.VITE_API_URL
@@ -16,6 +20,8 @@ const useVideogames = () => {
             })
             .catch(error => console.error(error))
     }, [])
+
+    // chiamata a id specifico tutte proprietà
 
     const fullVideogames = async (id) => {
         try {
@@ -32,7 +38,21 @@ const useVideogames = () => {
         }
     };
 
-    return { videogames, fullVideogames }
+    // per la comparazione
+
+    const compareVideogames = (game) => {
+        if (compare.some(g => g.id === game.id)) {
+            alert("hai già inserito nella comparazione questo videogioco")
+            return
+        }
+        setCompare(p => [...p, game])
+    }
+
+    const clearCompare = () => {
+        setCompare([])
+    }
+
+    return { videogames, fullVideogames, compare, compareVideogames, clearCompare }
 
 }
 

@@ -5,10 +5,12 @@ const FetchContext = createContext()
 
 const FetchProvider = ({ children }) => {
 
-    const { videogames, setVideogames, fullVideogames } = useVideogames()
+    // destrutturo i metodi del customHook
+
+    const { videogames, fullVideogames, compare, compareVideogames, clearCompare } = useVideogames()
 
     return (
-        <FetchContext.Provider value={{ videogames, setVideogames, fullVideogames }} >
+        <FetchContext.Provider value={{ videogames, fullVideogames, compare, compareVideogames, clearCompare }} >
             {children}
         </FetchContext.Provider>
     )
