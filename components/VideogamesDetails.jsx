@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useFetchContext } from '../context/GlobalContext';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams, NavLink } from 'react-router-dom';
 import CompareVideogamesModal from './CompareVideogamesModal';
+
 
 const VideogamesDetails = () => {
 
@@ -31,7 +32,7 @@ const VideogamesDetails = () => {
 
     }, [id, fullVideogames]);
 
-
+    // per la comparzione
 
     const handleCompare = (games) => {
         compareVideogames(games)
@@ -42,27 +43,36 @@ const VideogamesDetails = () => {
     }
 
     return (
-        <div>
-            {videogame && (
-                <>
-                    <h1>Dettagli Videogame</h1>
-                    <h2>{videogame.title}</h2>
-                    <h3>{videogame.category}</h3>
-                    <img src={videogame.image}
-                        alt={videogame.title}
-                        style={{ width: '300px' }} />
-                    <p>{videogame.description}</p>
-                    <p>{videogame.platform}</p>
-                    <p>{videogame.releseYear}</p>
-                    <p>{videogame.developer}</p>
-                    <p>{videogame.maxPlayer}</p>
-                    <p>{videogame.price}</p>
-                    <p>{videogame.rating}</p>
-                    <button onClick={() => handleCompare(videogame)}>Compara</button>
-                </>
-            )}
-            {compare.length === 2 && <CompareVideogamesModal />}
-        </div>
+        <>
+            <header>
+                <ul className="navbar">
+                    <li>
+                        <NavLink to="/">Lista Completa</NavLink>
+                    </li>
+                </ul>
+            </header>
+            <div>
+                {videogame && (
+                    <>
+                        <h1>Dettagli Videogame</h1>
+                        <h2>{videogame.title}</h2>
+                        <h3>{videogame.category}</h3>
+                        <img src={videogame.image}
+                            alt={videogame.title}
+                            style={{ width: '300px' }} />
+                        <p>{videogame.description}</p>
+                        <p>{videogame.platform}</p>
+                        <p>{videogame.releseYear}</p>
+                        <p>{videogame.developer}</p>
+                        <p>{videogame.maxPlayer}</p>
+                        <p>{videogame.price}</p>
+                        <p>{videogame.rating}</p>
+                        <button onClick={() => handleCompare(videogame)}>Compara</button>
+                    </>
+                )}
+                {compare.length === 2 && <CompareVideogamesModal />}
+            </div>
+        </>
     );
 };
 

@@ -13,7 +13,7 @@
     text-align: left;
 }
 
-.modal-overlay {
+.modalOverlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -58,4 +58,60 @@
     color: white;
     border: none;
     border-radius: 5px;
+}
+
+/* components/FavoritesModal.css */
+.favContainer {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 999;
+}
+
+.favIcon {
+    font-size: 60px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.favModal {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateY(0);
+    opacity: 0;
+    visibility: hidden;
+    width: 300px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 1rem;
+    transition: all 0.3s ease-in-out;
+    backdrop-filter: blur(10px);
+}
+
+.favContainer:hover .favModal {
+    opacity: 1;
+    visibility: visible;
+}
+
+.favItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+}
+
+.favItem a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.favItem button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: red;
 }

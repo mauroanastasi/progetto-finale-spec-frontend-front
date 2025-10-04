@@ -3,7 +3,7 @@ import VideogamesList from '../components/VideogamesList'
 import VideogamesDetails from '../components/VideogamesDetails'
 import { FetchProvider } from '../context/GlobalContext'
 import VideogamesItem from '../components/VideogamesItem'
-
+import FavoritesVideogamesModal from '../components/FavoritesVideogamesModal'
 
 function App() {
 
@@ -11,6 +11,7 @@ function App() {
     <>
       <FetchProvider>
         <BrowserRouter>
+          <FavoritesVideogamesModal />
           <Routes>
             <Route>
               <Route path='/' element={<VideogamesList />} ></Route>

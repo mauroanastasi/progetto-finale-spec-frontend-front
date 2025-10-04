@@ -8,7 +8,7 @@ const CompareVideogamesModal = () => {
     const [firstGame, secondGame] = compare;
 
     return (
-        <div className="modal-overlay">
+        <div className="modalOverlay">
             <div className="modal">
                 <h2>Comparazione</h2>
                 <table>

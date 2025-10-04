@@ -5,13 +5,15 @@ import CompareVideogamesModal from './CompareVideogamesModal';
 
 const VideogamesList = () => {
 
-    // per la ricerca di titolo e categoria
-
     const { videogames } = useFetchContext();
 
     const [search, setSearch] = useState("");
-
     const [searchCategory, setSearchCategory] = useState("");
+
+    const [sortBy, setSortBy] = useState(`title`)
+    const [sortOrder, setSortOrder] = useState(1)
+
+    // per la ricerca di titolo e categoria
 
     const handleChange = (e) => {
         setSearch(e.target.value)
@@ -26,7 +28,7 @@ const VideogamesList = () => {
         (searchCategory === "" || v.category === searchCategory)
     );
 
-    // per inserire le categorie di videogiochi
+    // per inserire le categorie di videogiochi mappandole
 
     const allCategories = videogames.map(game => game.category);
 
@@ -34,27 +36,15 @@ const VideogamesList = () => {
 
     // per l'ordinamento alfabetico
 
-    const [sortBy, setSortBy] = useState(`title`)
-
-    const [sortOrder, setSortOrder] = useState(1)
-
-    const handleSort = (field) => {
-        if (sortBy === field) {
-            setSortOrder(prev => prev * -1);
-        } else {
-            setSortBy(field)
-            setSortOrder(1)
-        }
+    const handleSort = () => {
+        setSortOrder(prev => prev * -1);
     }
 
     const visualSort = sortOrder === 1 ? "A-Z" : "Z-A";
 
     const sortedVideogames = useMemo(() => {
         return [...filteredArray].sort((a, b) => {
-            let comp
-            if (sortBy === "title") {
-                comp = a.title.localeCompare(b.title)
-            }
+            let comp = a.title.localeCompare(b.title)
             return comp * sortOrder;
         })
     }, [filteredArray, sortBy, sortOrder])
@@ -81,7 +71,7 @@ const VideogamesList = () => {
                 <table className='videoGamesTable'>
                     <thead>
                         <tr>
-                            <th onClick={() => handleSort(`title`)} >Titolo {sortBy === "title" && visualSort}</th>
+                            <th onClick={handleSort} >Titolo {sortBy === "title" && visualSort}</th>
                             <th>Categoria </th>
                             <th>Dettagli</th>
                         </tr>
@@ -93,11 +83,8 @@ const VideogamesList = () => {
                     </tbody>
                 </table>
             </>
-
-
         </div >
     )
 }
-
 
 export default VideogamesList

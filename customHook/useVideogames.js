@@ -3,13 +3,14 @@ import { useParams } from "react-router-dom";
 
 const useVideogames = () => {
 
+    const apiUrl = import.meta.env.VITE_API_URL
+
+    const [videogames, setVideogames] = useState([])
     const [compare, setCompare] = useState([])
+    const [fav, setFav] = useState([])
 
     // chiamata globale list solo proprietà id, createdAt, updatedAt, title, category
 
-    const [videogames, setVideogames] = useState([])
-
-    const apiUrl = import.meta.env.VITE_API_URL
 
     useEffect(() => {
         fetch(`${apiUrl}/videogames`)
@@ -40,6 +41,7 @@ const useVideogames = () => {
 
     // per la comparazione
 
+
     const compareVideogames = (game) => {
         if (compare.some(g => g.id === game.id)) {
             alert("hai già inserito nella comparazione questo videogioco")
@@ -52,7 +54,25 @@ const useVideogames = () => {
         setCompare([])
     }
 
-    return { videogames, fullVideogames, compare, compareVideogames, clearCompare }
+    // per i preferiti
+
+    const favoritesVideogames = (game) => {
+        if (fav.some(g => g.id === game.id))
+            return
+        setFav(p => [...p, game]);
+    }
+
+    const deleteFav = (game) => {
+        setFav(p => (
+            p.filter(g => g.id !== game.id)
+        ))
+    }
+
+    const clearFavorites = () => {
+        setFav([])
+    }
+
+    return { videogames, fullVideogames, compare, compareVideogames, clearCompare, fav, favoritesVideogames, deleteFav, clearFavorites }
 
 }
 
