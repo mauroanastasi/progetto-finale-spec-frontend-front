@@ -1,12 +1,27 @@
-import React, { useState, useEffect, useMemo } from 'react'
+import React, { useState, useEffect, useMemo, useCallback } from 'react'
 import { useFetchContext } from '../context/GlobalContext'
 import VideogamesItem from './VideogamesItem';
 
+function debounce(callback, delay) {
+    let timer
+    return (...value) => {
+        clearTimeout(timer)
+        timer = setTimeout(() => {
+            callback(...value)
+        }, delay)
+    }
+}
 
 const VideogamesList = () => {
 
     // prova per api search
     const { videogames, fetchVideogames } = useFetchContext();
+
+    const eseguiFetch = useCallback(debounce((title, category) => {
+        fetchVideogames(title, category)
+    }, 500),
+        [fetchVideogames]
+    )
 
     const [searchTitle, setSearchTitle] = useState("");
     const [searchCategory, setSearchCategory] = useState("");
@@ -15,12 +30,12 @@ const VideogamesList = () => {
     const [sortOrder, setSortOrder] = useState(1)
 
     // per api lista, search e category
-
     useEffect(() => {
-        fetchVideogames(searchTitle, searchCategory);
+        eseguiFetch(searchTitle, searchCategory);
     }, [searchTitle, searchCategory]);
 
     // per la ricerca di titolo e categoria
+
 
     const handleChange = (e) => {
         setSearchTitle(e.target.value)
@@ -54,6 +69,7 @@ const VideogamesList = () => {
     return (
         <div>
             <h1>Videogames</h1>
+
             <input type="text" value={searchTitle} onChange={handleChange} />
 
             <label htmlFor="caategorie">Scegli una categoria:</label>

@@ -62,7 +62,7 @@ const VideogamesDetails = () => {
                             style={{ width: '300px' }} />
                         <p>{videogame.description}</p>
                         <p>{videogame.platform}</p>
-                        <p>{videogame.releseYear}</p>
+                        <p>{videogame.releaseYear}</p>
                         <p>{videogame.developer}</p>
                         <p>{videogame.maxPlayer}</p>
                         <p>{videogame.price}</p>

@@ -36,8 +36,8 @@ const CompareVideogamesModal = () => {
                         </tr>
                         <tr>
                             <td>Anno</td>
-                            <td>{firstGame.releseYear}</td>
-                            <td>{secondGame.releseYear}</td>
+                            <td>{firstGame.releaseYear}</td>
+                            <td>{secondGame.releaseYear}</td>
                         </tr>
                         <tr>
                             <td>Developer</td>
@@ -46,8 +46,8 @@ const CompareVideogamesModal = () => {
                         </tr>
                         <tr>
                             <td>Giocatori max</td>
-                            <td>{firstGame.maxPlayer}</td>
-                            <td>{secondGame.maxPlayer}</td>
+                            <td>{firstGame.maxPlayers}</td>
+                            <td>{secondGame.maxPlayers}</td>
                         </tr>
                         <tr>
                             <td>Prezzo</td>
