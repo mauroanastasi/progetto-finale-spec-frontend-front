@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 
 const useVideogames = () => {
 
@@ -9,18 +8,24 @@ const useVideogames = () => {
     const [compare, setCompare] = useState([])
     const [fav, setFav] = useState([])
 
-    // chiamata globale list solo proprietà id, createdAt, updatedAt, title, category
+    // chiamata api globale con queryParams opzionali
 
-
-    useEffect(() => {
-        fetch(`${apiUrl}/videogames`)
+    const fetchVideogames = (search = '', category = '') => {
+        const params = new URLSearchParams();
+        if (search) {
+            params.append('search', search);
+        }
+        if (category) {
+            params.append('category', category);
+        }
+        fetch(`${apiUrl}/videogames?${params.toString()}`)
             .then(res => res.json())
             .then(data => {
-                console.log(data)
                 setVideogames(data)
+                console.log(data)
             })
-            .catch(error => console.error(error))
-    }, [])
+            .catch(error => console.error(error));
+    };
 
     // chiamata a id specifico tutte proprietà
 
@@ -40,7 +45,6 @@ const useVideogames = () => {
     };
 
     // per la comparazione
-
 
     const compareVideogames = (game) => {
         if (compare.some(g => g.id === game.id)) {
@@ -72,7 +76,7 @@ const useVideogames = () => {
         setFav([])
     }
 
-    return { videogames, fullVideogames, compare, compareVideogames, clearCompare, fav, favoritesVideogames, deleteFav, clearFavorites }
+    return { fetchVideogames, videogames, fullVideogames, compare, compareVideogames, clearCompare, fav, favoritesVideogames, deleteFav, clearFavorites }
 
 }
 

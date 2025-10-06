@@ -1,6 +1,5 @@
-import React from 'react';
 import { useFetchContext } from '../context/GlobalContext';
-import ReactDOM from 'react-dom';
+
 
 const CompareVideogamesModal = () => {
     const { compare, clearCompare } = useFetchContext();

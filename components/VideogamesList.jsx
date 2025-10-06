@@ -1,32 +1,34 @@
 import React, { useState, useEffect, useMemo } from 'react'
 import { useFetchContext } from '../context/GlobalContext'
 import VideogamesItem from './VideogamesItem';
-import CompareVideogamesModal from './CompareVideogamesModal';
+
 
 const VideogamesList = () => {
 
-    const { videogames } = useFetchContext();
+    // prova per api search
+    const { videogames, fetchVideogames } = useFetchContext();
 
-    const [search, setSearch] = useState("");
+    const [searchTitle, setSearchTitle] = useState("");
     const [searchCategory, setSearchCategory] = useState("");
 
     const [sortBy, setSortBy] = useState(`title`)
     const [sortOrder, setSortOrder] = useState(1)
 
+    // per api lista, search e category
+
+    useEffect(() => {
+        fetchVideogames(searchTitle, searchCategory);
+    }, [searchTitle, searchCategory]);
+
     // per la ricerca di titolo e categoria
 
     const handleChange = (e) => {
-        setSearch(e.target.value)
+        setSearchTitle(e.target.value)
     }
 
     const handleChangeCategory = (e) => {
         setSearchCategory(e.target.value)
     }
-
-    const filteredArray = videogames.filter(v =>
-        v.title.toLowerCase().includes(search.toLowerCase()) &&
-        (searchCategory === "" || v.category === searchCategory)
-    );
 
     // per inserire le categorie di videogiochi mappandole
 
@@ -43,16 +45,16 @@ const VideogamesList = () => {
     const visualSort = sortOrder === 1 ? "A-Z" : "Z-A";
 
     const sortedVideogames = useMemo(() => {
-        return [...filteredArray].sort((a, b) => {
+        return [...videogames].sort((a, b) => {
             let comp = a.title.localeCompare(b.title)
             return comp * sortOrder;
         })
-    }, [filteredArray, sortBy, sortOrder])
+    }, [videogames, sortOrder])
 
     return (
         <div>
             <h1>Videogames</h1>
-            <input type="text" value={search} onChange={handleChange} />
+            <input type="text" value={searchTitle} onChange={handleChange} />
 
             <label htmlFor="caategorie">Scegli una categoria:</label>
             <select name="categorie" id="categorie"
