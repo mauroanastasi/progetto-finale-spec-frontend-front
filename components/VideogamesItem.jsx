@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 import { useFetchContext } from '../context/GlobalContext'
 
@@ -16,9 +15,9 @@ const VideogamesItem = ({ title, category, id }) => {
             <td>{category}</td>
             <td>
                 <button>
-                    <Link to={`/details/${id}`}>Scopri di più</Link>
+                    <Link className='LinkDett' to={`/details/${id}`}>Scopri di più</Link>
                 </button>
-                <button onClick={() => handleFav({ id, title })}>⭐ Aggiungi ai preferiti</button>
+                <button className='buttFav' onClick={() => handleFav({ id, title })}>⭐ Aggiungi ai preferiti</button>
             </td>
         </tr>
     )

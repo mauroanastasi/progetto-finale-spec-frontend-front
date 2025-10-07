@@ -1,0 +1,383 @@
+[
+    {
+        "id": 1,
+        "createdAt": "2025-09-30T02:40:00Z",
+        "updatedAt": "2025-09-30T02:40:00Z",
+        "title": "Elden Ring",
+        "category": "RPG",
+        "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1245620/capsule_616x353.jpg?t=1748630546",
+        "description": "Un vasto open world dark fantasy in cui esplori The Lands Between, affronti boss poderosi e scopri segreti oscuri.",
+        "platform": [
+            "PC",
+            "PS5",
+            "Xbox Series X/S"
+        ],
+        "releaseYear": 2022,
+        "developer": "FromSoftware",
+        "maxPlayers": 1,
+        "price": 59.99,
+        "rating": 9.5
+    },
+    {
+        "id": 2,
+        "createdAt": "2025-09-30T02:40:00Z",
+        "updatedAt": "2025-09-30T02:40:00Z",
+        "title": "The Legend of Zelda: Breath of the Wild",
+        "category": "Adventure",
+        "image": "https://m.media-amazon.com/images/S/aplus-media-library-service-media/0b7f8577-471d-4ca8-a337-c7aa488898cd.__CR0,0,970,600_PT0_SX970_V1___.jpg",
+        "description": "Un’avventura open world dove esplori Hyrule liberamente, risolvi enigmi e combatti per salvare il regno.",
+        "platform": [
+            "Nintendo Switch"
+        ],
+        "releaseYear": 2017,
+        "developer": "Nintendo",
+        "maxPlayers": 1,
+        "price": 49.99,
+        "rating": 10
+    },
+    {
+        "id": 3,
+        "createdAt": "2025-09-30T02:40:00Z",
+        "updatedAt": "2025-09-30T02:40:00Z",
+        "title": "Halo Infinite",
+        "category": "FPS",
+        "image": "https://cdn.dlcompare.com/game_tetiere/upload/gameimage/file/79d8-halo_infinite_(campaign).jpeg.webp",
+        "description": "Missioni epiche, campagna immersiva e modalità multiplayer su vasta scala.",
+        "platform": [
+            "PC",
+            "Xbox Series X/S"
+        ],
+        "releaseYear": 2021,
+        "developer": "343 Industries",
+        "maxPlayers": 16,
+        "price": 59.99,
+        "rating": 8
+    },
+    {
+        "id": 4,
+        "createdAt": "2025-09-30T02:40:00Z",
+        "updatedAt": "2025-09-30T02:40:00Z",
+        "title": "God of War Ragnarök",
+        "category": "Action",
+        "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2322010/capsule_616x353.jpg?t=1750909504",
+        "description": "Kratos e Atreus viaggiano nei nove regni affrontando dèi e mitologie nordiche.",
+        "platform": [
+            "PS5"
+        ],
+        "releaseYear": 2022,
+        "developer": "Santa Monica Studio",
+        "maxPlayers": 1,
+        "price": 69.99,
+        "rating": 9.7
+    },
+    {
+        "id": 5,
+        "createdAt": "2025-09-30T02:40:00Z",
+        "updatedAt": "2025-09-30T02:40:00Z",
+        "title": "Animal Crossing: New Horizons",
+        "category": "Simulation",
+        "image": "https://gaming-cdn.com/images/news/articles/12761/cover/1000x563/animal-crossing-new-horizons-ha-ricevuto-la-sua-prima-patch-in-tre-anni-cover68372ef2b1f85.jpg",
+        "description": "Costruisci la tua isola paradisiaca, interagisci con gli abitanti e personalizza ogni angolo.",
+        "platform": [
+            "Nintendo Switch"
+        ],
+        "releaseYear": 2020,
+        "developer": "Nintendo",
+        "maxPlayers": 4,
+        "price": 59.99,
+        "rating": 8.8
+    },
+    {
+        "id": 6,
+        "createdAt": "2025-09-30T02:40:00Z",
+        "updatedAt": "2025-09-30T02:40:00Z",
+        "title": "Hades",
+        "category": "Roguelike",
+        "image": "https://cdn1.epicgames.com/min/offer/2560x1440-2560x1440-5e710b93049cbd2125cf0261dcfbf943.jpg?resize=1&w=480&h=270&quality=medium",
+        "description": "Sfuggi all’Ade affrontando ondate di nemici, potenziamenti divini e storia avvincente.",
+        "platform": [
+            "PC",
+            "Switch",
+            "PS5",
+            "Xbox"
+        ],
+        "releaseYear": 2020,
+        "developer": "Supergiant Games",
+        "maxPlayers": 1,
+        "price": 24.99,
+        "rating": 9
+    },
+    {
+        "id": 7,
+        "createdAt": "2025-09-30T02:40:00Z",
+        "updatedAt": "2025-09-30T02:40:00Z",
+        "title": "Cyberpunk 2077",
+        "category": "RPG",
+        "image": "https://upload.wikimedia.org/wikipedia/en/9/9f/Cyberpunk_2077_box_art.jpg",
+        "description": "Immergiti nella città futuristica di Night City, con scelte morali, tecnologia e conflitti intensi.",
+        "platform": [
+            "PC",
+            "PS5",
+            "Xbox Series X/S"
+        ],
+        "releaseYear": 2020,
+        "developer": "CD Projekt",
+        "maxPlayers": 1,
+        "price": 49.99,
+        "rating": 7.8
+    },
+    {
+        "id": 8,
+        "createdAt": "2025-09-30T02:40:00Z",
+        "updatedAt": "2025-09-30T02:40:00Z",
+        "title": "Overwatch 2",
+        "category": "FPS",
+        "image": "https://i.ytimg.com/vi/QGJUQs2xMXs/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDVx1dVQW6sD_GnGNHWtfNOXhZ_KA",
+        "description": "Un hero shooter competitivo con personaggi distinti, modalità a squadre e aggiornamenti costanti.",
+        "platform": [
+            "PC",
+            "PS5",
+            "Xbox",
+            "Switch"
+        ],
+        "releaseYear": 2022,
+        "developer": "Blizzard Entertainment",
+        "maxPlayers": 12,
+        "price": 0,
+        "rating": 7
+    },
+    {
+        "id": 9,
+        "createdAt": "2025-09-30T02:40:00Z",
+        "updatedAt": "2025-09-30T02:40:00Z",
+        "title": "Minecraft",
+        "category": "Sandbox",
+        "image": "https://store-images.s-microsoft.com/image/apps.29741.14581193029730121.5999c68b-7fd8-48ec-b0cb-3e37e1d7ec03.38839d35-0654-480a-b909-a5107b3f9d14?q=90&w=480&h=270",
+        "description": "Costruisci, esplora e sopravvivi in mondi generati proceduralmente, da solo o in multiplayer.",
+        "platform": [
+            "PC",
+            "PS5",
+            "Xbox",
+            "Switch",
+            "Mobile"
+        ],
+        "releaseYear": 2011,
+        "developer": "Mojang",
+        "maxPlayers": 8,
+        "price": 26.95,
+        "rating": 9.2
+    },
+    {
+        "id": 10,
+        "createdAt": "2025-09-30T02:40:00Z",
+        "updatedAt": "2025-09-30T02:40:00Z",
+        "title": "The Witcher 3: Wild Hunt",
+        "category": "RPG",
+        "image": "https://p325k7wa.twic.pics/high/the-witcher/the-witcher-3-wild-hunt/00-page-setup/tw3-kf-updatedforthenext.png?twic=v1/resize=700/step=10/quality=80",
+        "description": "Segui Geralt di Rivia nella sua epica missione, affrontando mostri, scelte morali e un mondo vivo.",
+        "platform": [
+            "PC",
+            "PS5",
+            "Xbox Series X/S",
+            "Switch"
+        ],
+        "releaseYear": 2015,
+        "developer": "CD Projekt Red",
+        "maxPlayers": 1,
+        "price": 39.99,
+        "rating": 9.7
+    },
+    {
+        "id": 11,
+        "createdAt": "2025-09-30T02:40:00Z",
+        "updatedAt": "2025-09-30T02:40:00Z",
+        "title": "Red Dead Redemption 2",
+        "category": "Adventure",
+        "image": "https://store-images.s-microsoft.com/image/apps.58752.68182501197884443.ac728a87-7bc1-4a0d-8bc6-0712072da93c.0cf58754-9802-46f8-8557-8d3ff32a627a?q=90&w=480&h=270",
+        "description": "Un'epica storia nel selvaggio West con un mondo vivo, missioni intense e libertà d’azione.",
+        "platform": [
+            "PC",
+            "PS5",
+            "Xbox Series X/S"
+        ],
+        "releaseYear": 2018,
+        "developer": "Rockstar Games",
+        "maxPlayers": 1,
+        "price": 59.99,
+        "rating": 9.8
+    },
+    {
+        "id": 12,
+        "createdAt": "2025-09-30T02:40:00Z",
+        "updatedAt": "2025-09-30T02:40:00Z",
+        "title": "Resident Evil Village",
+        "category": "Horror",
+        "image": "https://cdn.dlcompare.com/game_tetiere/upload/gameimage/file/2c75-resident_evil_village.jpeg.webp",
+        "description": "Un survival horror immersivo in un villaggio pieno di misteri, mostri e tensione costante.",
+        "platform": [
+            "PC",
+            "PS5",
+            "Xbox Series X/S"
+        ],
+        "releaseYear": 2021,
+        "developer": "Capcom",
+        "maxPlayers": 1,
+        "price": 59.99,
+        "rating": 8.5
+    },
+    {
+        "id": 13,
+        "createdAt": "2025-09-30T02:40:00Z",
+        "updatedAt": "2025-09-30T02:40:00Z",
+        "title": "Mario Kart 8 Deluxe",
+        "category": "Racing",
+        "image": "https://i.ytimg.com/vi/urnzsXYtyI0/sddefault.jpg",
+        "description": "Corse folli con i personaggi Nintendo su piste creative, armi bizzarre e multiplayer esplosivo.",
+        "platform": [
+            "Nintendo Switch"
+        ],
+        "releaseYear": 2017,
+        "developer": "Nintendo",
+        "maxPlayers": 12,
+        "price": 59.99,
+        "rating": 9.3
+    },
+    {
+        "id": 14,
+        "createdAt": "2025-09-30T02:40:00Z",
+        "updatedAt": "2025-09-30T02:40:00Z",
+        "title": "Stardew Valley",
+        "category": "Simulation",
+        "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/413150/capsule_616x353.jpg?t=1754692865",
+        "description": "Crea la tua fattoria, intreccia relazioni, coltiva campi e vivi una vita semplice ma profonda.",
+        "platform": [
+            "PC",
+            "Switch",
+            "PS5",
+            "Xbox",
+            "Mobile"
+        ],
+        "releaseYear": 2016,
+        "developer": "ConcernedApe",
+        "maxPlayers": 4,
+        "price": 14.99,
+        "rating": 9
+    },
+    {
+        "id": 15,
+        "createdAt": "2025-09-30T02:40:00Z",
+        "updatedAt": "2025-09-30T02:40:00Z",
+        "title": "Final Fantasy VII Remake",
+        "category": "RPG",
+        "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1462040/capsule_616x353.jpg?t=1746070920",
+        "description": "Rivivi l’epica storia di Cloud e compagni in una nuova veste grafica e sistema di combattimento moderno.",
+        "platform": [
+            "PS5",
+            "PC"
+        ],
+        "releaseYear": 2020,
+        "developer": "Square Enix",
+        "maxPlayers": 1,
+        "price": 69.99,
+        "rating": 8.9
+    },
+    {
+        "id": 16,
+        "createdAt": "2025-09-30T02:40:00Z",
+        "updatedAt": "2025-09-30T02:40:00Z",
+        "title": "Apex Legends",
+        "category": "Battle Royale",
+        "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1172470/f002ac48d98f501231e7d8bd3cc418b65c8d511a/capsule_616x353.jpg?t=1754578148",
+        "description": "Uno sparatutto competitivo a squadre con personaggi unici, abilità e azione frenetica.",
+        "platform": [
+            "PC",
+            "PS5",
+            "Xbox",
+            "Switch"
+        ],
+        "releaseYear": 2019,
+        "developer": "Respawn Entertainment",
+        "maxPlayers": 60,
+        "price": 0,
+        "rating": 8.4
+    },
+    {
+        "id": 17,
+        "createdAt": "2025-09-30T02:40:00Z",
+        "updatedAt": "2025-09-30T02:40:00Z",
+        "title": "Assassin's Creed Valhalla",
+        "category": "Action RPG",
+        "image": "https://gaming-cdn.com/images/products/6147/616x353/assassin-s-creed-valhalla-pc-gioco-ubisoft-connect-europe-cover.jpg?v=1709130520",
+        "description": "Vivi come un vichingo, conquista l’Inghilterra e scopri misteri norreni in un mondo vasto.",
+        "platform": [
+            "PC",
+            "PS5",
+            "Xbox Series X/S"
+        ],
+        "releaseYear": 2020,
+        "developer": "Ubisoft",
+        "maxPlayers": 1,
+        "price": 59.99,
+        "rating": 8.2
+    },
+    {
+        "id": 18,
+        "createdAt": "2025-09-30T02:40:00Z",
+        "updatedAt": "2025-09-30T02:40:00Z",
+        "title": "Call of Duty: Modern Warfare II",
+        "category": "FPS",
+        "image": "https://gaming-cdn.com/images/products/16428/616x353/call-of-duty-modern-warfare-ii-cross-gen-bundle-cross-gen-bundle-playstation-5-playstation-4-gioco-playstation-store-europe-cover.jpg?v=1730307244",
+        "description": "Torna la leggendaria serie con una nuova campagna, multiplayer tattico e grafica spinta.",
+        "platform": [
+            "PC",
+            "PS5",
+            "Xbox Series X/S"
+        ],
+        "releaseYear": 2022,
+        "developer": "Infinity Ward",
+        "maxPlayers": 64,
+        "price": 69.99,
+        "rating": 8.1
+    },
+    {
+        "id": 19,
+        "createdAt": "2025-09-30T02:40:00Z",
+        "updatedAt": "2025-09-30T02:40:00Z",
+        "title": "Fortnite",
+        "category": "Battle Royale",
+        "image": "https://www.repstatic.it/content/nazionale/img/2018/09/28/175457409-e9319822-47cc-4407-bbe0-5f7ce8160516.jpg",
+        "description": "Costruisci, combatti e sopravvivi in un mondo sempre aggiornato con eventi e collaborazioni uniche.",
+        "platform": [
+            "PC",
+            "PS5",
+            "Xbox",
+            "Switch",
+            "Mobile"
+        ],
+        "releaseYear": 2017,
+        "developer": "Epic Games",
+        "maxPlayers": 100,
+        "price": 0,
+        "rating": 8.6
+    },
+    {
+        "id": 20,
+        "createdAt": "2025-09-30T02:40:00Z",
+        "updatedAt": "2025-09-30T02:40:00Z",
+        "title": "Celeste",
+        "category": "Platformer",
+        "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/504230/capsule_616x353.jpg?t=1714089525",
+        "description": "Scala una montagna metaforica in un platform impegnativo e toccante, con colonna sonora eccezionale.",
+        "platform": [
+            "PC",
+            "PS5",
+            "Xbox",
+            "Switch"
+        ],
+        "releaseYear": 2018,
+        "developer": "Matt Makes Games",
+        "maxPlayers": 1,
+        "price": 19.99,
+        "rating": 9.4
+    }
+]

@@ -1,17 +1,181 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: oklch(80.92% 0.12991 196.801);
+    color: #111;
+}
+
+.navbar {
+    list-style: none;
+    background-color: #111827;
+    padding: 1rem 2rem;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+.navbar li {
+    color: white;
+}
+
+.navbar li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.5s
+}
+
+.navbar li a:hover {
+    color: #00ff4c;
+}
+
+.tornaLista {
+    font-size: 1rem;
+}
+
+/* //////////////////////////////////////////////
+///////////////TABELLA PRINCIPALE////////////////// */
+
 .videoGamesTable {
-    width: 700px;
+    width: 100%;
+    max-width: 900px;
+    margin: 2rem auto;
     border-collapse: collapse;
-    margin-top: 1rem;
-    background-color: white;
-    table-layout: auto;
+    background-color: #ffffff;
 }
 
 .videoGamesTable th,
 .videoGamesTable td {
-    border: 1px solid #444444;
-    padding: 0.5rem 1rem;
+    border: 1px solid #ffffff;
+    padding: 1rem;
     text-align: left;
 }
+
+.tableThead {
+    background-color: #1f2937;
+    color: #ffffff;
+}
+
+.tableTitle {
+    cursor: pointer;
+}
+
+.tableTitle:hover {
+    color: #11ff00
+}
+
+/* //////////////////////////////////////////////
+//////////////PAGINA DETTAGLIO/////////////// */
+
+.mostraGiocoSelez {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    box-shadow: 0 0 20px rgb(234, 255, 0);
+    border-radius: 10px;
+}
+
+.imgVideogioco {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.descrSel,
+.piattSel,
+.dateSel,
+.svilSel,
+.playersSel,
+.prezzoSel,
+.votoSel {
+    margin: 0.5rem 0;
+    line-height: 1.5;
+}
+
+/* ///////////////////////////////////////////
+//////////////IMPUT E SELECT/////////////// */
+
+.inputTex {
+    display: block;
+    margin: 2rem auto 1rem auto;
+    padding: 0.5rem 1rem;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.inputLabelCategory {
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.categorySelect {
+    display: block;
+    margin: 0 auto 2rem auto;
+    padding: 0.5rem 1rem;
+    width: 200px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* ///////////////////////////////////////
+//////////////PULSANTI/////////////// */
+
+button {
+    cursor: pointer;
+    background-color: lab(56.76% 89.43 -25.63);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0.25rem;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: hwb(321 1% 18%);
+}
+
+.buttCompara {
+    background-color: #059669;
+}
+
+.buttCompara:hover {
+    background-color: #047857;
+}
+
+.buttFav {
+    background-color: #facc15;
+    color: #111;
+}
+
+.buttFav:hover {
+    background-color: #eab308;
+}
+
+/* //////////////////////////////////////////
+/////////////////LINK DETTAGLI//////////////// */
+
+.LinkDett {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+}
+
+.LinkDett:hover {
+    color: #d1d5db;
+}
+
+/* ///////////////////////////////////////////////
+////////////////MODALE COMPARAZIONE/////////////// */
 
 .modalOverlay {
     position: fixed;
@@ -27,8 +191,9 @@
 }
 
 .modal {
-    background: rgb(255, 255, 255);
+    background: white;
     max-width: 800px;
+    width: 100%;
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
@@ -36,58 +201,66 @@
 
 .modal h2 {
     text-align: center;
+    margin-bottom: 1rem;
 }
 
-.modal table {
+.tableComp {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 1rem;
 }
 
-.modal td,
-.modal th {
-    border: 1px solid #727272;
+.tableCompThead,
+.tableCompTbody {
+    background-color: lch(91.07% 13.81 259.16);
+}
+
+.tableComp th,
+.tableComp td {
+    border: 1px solid hwb(220 70% 0%);
     padding: 0.5rem;
     text-align: center;
 }
 
-.modal button {
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
-    background-color: #222;
-    color: white;
-    border: none;
-    border-radius: 5px;
+.chiudiComp {
+    display: block;
+    margin: 1rem auto 0 auto;
+    background-color: #ef4444;
 }
 
-/* components/FavoritesModal.css */
+.chiudiComp:hover {
+    background-color: #dc2626;
+}
+
+/* /////////////////////////////////////////
+////////////////MODALE PREFERITI////////////// */
+
 .favContainer {
     position: fixed;
-    top: 20px;
+    top: 60px;
     right: 20px;
-    z-index: 999;
+    z-index: 2;
 }
 
 .favIcon {
-    font-size: 60px;
+    font-size: 70px;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s;
+    color: #facc15;
 }
 
 .favModal {
     position: absolute;
     top: 0;
     right: 0;
-    transform: translateY(0);
     opacity: 0;
     visibility: hidden;
     width: 300px;
-    background: rgba(255, 255, 255, 0.95);
-    border: 1px solid #ccc;
+    background: lab(99.73% -1.88 5.24);
+    border: 1px solid hsl(61, 100%, 84%);
     border-radius: 10px;
     padding: 1rem;
-    transition: all 0.3s ease-in-out;
-    backdrop-filter: blur(10px);
+    transition: all 0.3s;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
 .favContainer:hover .favModal {
@@ -96,22 +269,33 @@
 }
 
 .favItem {
-    display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px 0;
 }
 
 .favItem a {
     text-decoration: none;
-    color: black;
-    font-weight: bold;
+    color: #111;
+    font-weight: 600;
 }
 
-.favItem button {
+.favItem a:hover {
+    color: lab(77.96% -71.41 53.97);
+}
+
+.eliminaFav {
     background: transparent;
     border: none;
     cursor: pointer;
     font-size: 18px;
-    color: red;
+    color: #ef4444;
+}
+
+.eliinaTuttiFav {
+    margin-top: 1rem;
+    background-color: #ef4444;
+}
+
+.eliinaTuttiFav:hover {
+    background-color: #dc2626;
 }

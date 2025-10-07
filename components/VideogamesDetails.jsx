@@ -3,18 +3,27 @@ import { useFetchContext } from '../context/GlobalContext';
 import { useNavigate, useParams, NavLink } from 'react-router-dom';
 import CompareVideogamesModal from './CompareVideogamesModal';
 
-
 const VideogamesDetails = () => {
 
     const navigate = useNavigate()
 
     const { fullVideogames, compareVideogames, compare } = useFetchContext();
 
-    // uso metodo per id specifico 
+    // id specifico 
 
     const { id } = useParams();
 
-    const [videogame, setVideogame] = useState([]);
+    const [videogame, setVideogame] = useState({});
+
+    // per i fav
+
+    const { favoritesVideogames } = useFetchContext()
+
+    const handleFav = (game) => {
+        favoritesVideogames(game);
+    }
+
+    // metodo per id specifico
 
     useEffect(() => {
 
@@ -46,28 +55,29 @@ const VideogamesDetails = () => {
         <>
             <header>
                 <ul className="navbar">
-                    <li>
+                    <li className='tornaLista' >
                         <NavLink to="/">Lista Completa</NavLink>
                     </li>
                 </ul>
             </header>
-            <div>
-                {videogame && (
+            <div className='mostraGiocoSelez' >
+                {videogame && videogame.platform && (
                     <>
-                        <h1>Dettagli Videogame</h1>
+                        <h1>Dettagli Videogame:</h1>
                         <h2>{videogame.title}</h2>
-                        <h3>{videogame.category}</h3>
-                        <img src={videogame.image}
+                        <h3>Genere: {videogame.category}</h3>
+                        <img className='imgVideogioco' src={videogame.image}
                             alt={videogame.title}
                             style={{ width: '300px' }} />
-                        <p>{videogame.description}</p>
-                        <p>{videogame.platform}</p>
-                        <p>{videogame.releaseYear}</p>
-                        <p>{videogame.developer}</p>
-                        <p>{videogame.maxPlayer}</p>
-                        <p>{videogame.price}</p>
-                        <p>{videogame.rating}</p>
-                        <button onClick={() => handleCompare(videogame)}>Compara</button>
+                        <p className='descrSel' > <b> Descrizione:</b> {videogame.description}</p>
+                        <p className='piattSel'><b> Piattaforma/e:</b> {videogame.platform.join(" - ")}</p>
+                        <p className='dateSel'><b> Data di rilascio:</b> {videogame.releaseYear}</p>
+                        <p className='svilSel'><b> Sviluppatori:</b> {videogame.developer}</p>
+                        <p className='playersSel'><b> Numero di giocatori massimo:</b> {videogame.maxPlayers}</p>
+                        <p className='prezzoSel'><b> Prezzo:</b> {videogame.price} €</p>
+                        <p className='votoSel'><b> Voto:</b> {videogame.rating}</p>
+                        <button className='buttCompara' onClick={() => handleCompare(videogame)}>Compara</button>
+                        <button className='buttFav' onClick={() => handleFav(videogame)}>⭐ Aggiungi ai preferiti</button>
                     </>
                 )}
                 {compare.length === 2 && <CompareVideogamesModal />}

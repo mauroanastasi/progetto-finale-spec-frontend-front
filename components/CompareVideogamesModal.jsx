@@ -10,58 +10,58 @@ const CompareVideogamesModal = () => {
         <div className="modalOverlay">
             <div className="modal">
                 <h2>Comparazione</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Titolo</th>
+                <table className='tableComp'>
+                    <thead className='tableCompThead'>
+                        <tr className='tableCompTr'>
+                            <th >Titolo</th>
                             <th>{firstGame.title}</th>
                             <th>{secondGame.title}</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className='tableCompTbody'>
                         <tr>
-                            <td>Categoria</td>
+                            <td className='tableCompTd'>Categoria</td>
                             <td>{firstGame.category}</td>
                             <td>{secondGame.category}</td>
                         </tr>
                         <tr>
-                            <td>Descrizione</td>
+                            <td className='tableCompTd'>Descrizione</td>
                             <td>{firstGame.description}</td>
                             <td>{secondGame.description}</td>
                         </tr>
                         <tr>
-                            <td>Piattaforma</td>
-                            <td>{firstGame.platform}</td>
-                            <td>{secondGame.platform}</td>
+                            <td className='tableCompTd'>Piattaforma</td>
+                            <td>{firstGame.platform.join(" - ")}</td>
+                            <td>{secondGame.platform.join(" - ")}</td>
                         </tr>
                         <tr>
-                            <td>Anno</td>
+                            <td className='tableCompTd'>Anno</td>
                             <td>{firstGame.releaseYear}</td>
                             <td>{secondGame.releaseYear}</td>
                         </tr>
                         <tr>
-                            <td>Developer</td>
+                            <td className='tableCompTd'>Developer</td>
                             <td>{firstGame.developer}</td>
                             <td>{secondGame.developer}</td>
                         </tr>
                         <tr>
-                            <td>Giocatori max</td>
+                            <td className='tableCompTd'>Giocatori max</td>
                             <td>{firstGame.maxPlayers}</td>
                             <td>{secondGame.maxPlayers}</td>
                         </tr>
                         <tr>
-                            <td>Prezzo</td>
+                            <td className='tableCompTd'>Prezzo</td>
                             <td>{firstGame.price} €</td>
                             <td>{secondGame.price} €</td>
                         </tr>
                         <tr>
-                            <td>Rating</td>
+                            <td className='tableCompTd'>Rating</td>
                             <td>{firstGame.rating}</td>
                             <td>{secondGame.rating}</td>
                         </tr>
                     </tbody>
                 </table>
-                <button onClick={clearCompare}>Chiudi</button>
+                <button className='chiudiComp' onClick={clearCompare}>Chiudi</button>
             </div>
         </div>
     );

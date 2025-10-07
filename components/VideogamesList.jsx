@@ -14,14 +14,7 @@ function debounce(callback, delay) {
 
 const VideogamesList = () => {
 
-    // prova per api search
     const { videogames, fetchVideogames } = useFetchContext();
-
-    const eseguiFetch = useCallback(debounce((title, category) => {
-        fetchVideogames(title, category)
-    }, 500),
-        [fetchVideogames]
-    )
 
     const [searchTitle, setSearchTitle] = useState("");
     const [searchCategory, setSearchCategory] = useState("");
@@ -30,12 +23,18 @@ const VideogamesList = () => {
     const [sortOrder, setSortOrder] = useState(1)
 
     // per api lista, search e category
+
+    const eseguiFetch = useCallback(debounce((title, category) => {
+        fetchVideogames(title, category)
+    }, 500),
+        [fetchVideogames]
+    )
+
     useEffect(() => {
         eseguiFetch(searchTitle, searchCategory);
     }, [searchTitle, searchCategory]);
 
     // per la ricerca di titolo e categoria
-
 
     const handleChange = (e) => {
         setSearchTitle(e.target.value)
@@ -57,7 +56,7 @@ const VideogamesList = () => {
         setSortOrder(prev => prev * -1);
     }
 
-    const visualSort = sortOrder === 1 ? "A-Z" : "Z-A";
+    const visualSort = sortOrder === 1 ? "(A-Z)" : "(Z-A)";
 
     const sortedVideogames = useMemo(() => {
         return [...videogames].sort((a, b) => {
@@ -68,15 +67,16 @@ const VideogamesList = () => {
 
     return (
         <div>
-            <h1>Videogames</h1>
+            <h1>VIDEOGAMES</h1>
 
-            <input type="text" value={searchTitle} onChange={handleChange} />
+            <input type="text" value={searchTitle} onChange={handleChange} className='inputTex' placeholder='Inserisci un titolo qui' />
 
-            <label htmlFor="caategorie">Scegli una categoria:</label>
+            <label htmlFor="caategorie" className='inputLabelCategory' >Scegli una categoria:</label>
             <select name="categorie" id="categorie"
                 type="text"
                 value={searchCategory}
                 onChange={handleChangeCategory}
+                className='categorySelect'
             >
                 <option value="" ></option>
                 {oneCategories.map((category, index) => (
@@ -87,14 +87,14 @@ const VideogamesList = () => {
             </select>
             <>
                 <table className='videoGamesTable'>
-                    <thead>
+                    <thead className='tableThead' >
                         <tr>
-                            <th onClick={handleSort} >Titolo {sortBy === "title" && visualSort}</th>
-                            <th>Categoria </th>
-                            <th>Dettagli</th>
+                            <th className='tableTitle' onClick={handleSort} >Titolo {sortBy === "title" && visualSort}</th>
+                            <th className='tableCat' >Categoria </th>
+                            <th className='tableDet' >Dettagli</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className='tableTbody' >
                         {sortedVideogames.map((game) => (
                             <VideogamesItem key={game.id} id={game.id} title={game.title} category={game.category} />
                         ))}
